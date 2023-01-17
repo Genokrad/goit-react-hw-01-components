@@ -1,10 +1,12 @@
+import { StyledItem, StyledSpan, StyledImg, StyledP } from '../Friends.styled';
+
 export const Item = ({ friend }) => {
   const { avatar, name, isOnline } = friend;
   return (
-    <li className="item">
-      <span className={isOnline ? 'online' : 'offline'}></span>
-      <img className="avatar" src={avatar} alt="User avatar" width="48" />
-      <p className="name">{name}</p>
-    </li>
+    <StyledItem isOnline={isOnline}>
+      <StyledSpan isOnline={isOnline} />
+      <StyledImg src={avatar} alt="User avatar" width="48" />
+      <StyledP isOnline={isOnline}>{name}</StyledP>
+    </StyledItem>
   );
 };

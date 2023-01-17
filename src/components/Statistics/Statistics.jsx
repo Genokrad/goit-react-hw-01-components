@@ -1,15 +1,18 @@
 import { Item } from './Item/Item';
 import { Title } from './Title/Title';
+import css from './statistics.module.css';
 
 export const Statistics = ({ title, data }) => {
   return (
-    <section className="statistics">
-      {title && <Title title={title} />}
-      <ul className="stat-list">
-        {data.map(data => {
-          return <Item key={data.id} data={data} />;
-        })}
-      </ul>
+    <section className={css.statistics}>
+      <div>
+        {title && <Title title={title} />}
+        <ul className={css.statList}>
+          {data.map(data => {
+            return <Item key={data.id} data={data} />;
+          })}
+        </ul>
+      </div>
     </section>
   );
 };

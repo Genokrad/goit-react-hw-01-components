@@ -1,21 +1,24 @@
 import { TableRow } from './Transaction/Transaction';
+import { StyledTable, StyledTableHead } from './Transaction.styled';
 
 export const TransactionHistory = ({ transactions }) => {
   return (
-    <table className="transaction-history">
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Amount</th>
-          <th>Currency</th>
-        </tr>
-      </thead>
+    <section>
+      <StyledTable className="transaction-history">
+        <thead>
+          <tr>
+            <StyledTableHead>Type</StyledTableHead>
+            <StyledTableHead>Amount</StyledTableHead>
+            <StyledTableHead>Currency</StyledTableHead>
+          </tr>
+        </thead>
 
-      <tbody>
-        {transactions.map(transaction => {
-          return <TableRow key={transaction.id} transaction={transaction} />;
-        })}
-      </tbody>
-    </table>
+        <tbody>
+          {transactions.map(transaction => {
+            return <TableRow key={transaction.id} transaction={transaction} />;
+          })}
+        </tbody>
+      </StyledTable>
+    </section>
   );
 };
