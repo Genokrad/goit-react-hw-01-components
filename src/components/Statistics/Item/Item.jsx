@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import css from './Item.module.css';
 
 export const Item = ({ data }) => {
@@ -13,4 +14,11 @@ export const Item = ({ data }) => {
       </span>
     </li>
   );
+};
+
+Item.propTypes = {
+  data: PropTypes.shape({
+    label: PropTypes.string.isRequired,
+    percentage: PropTypes.number.isRequired,
+  }).isRequired,
 };

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { StyledItem, StyledSpan, StyledImg, StyledP } from '../Friends.styled';
 
 export const Item = ({ friend }) => {
@@ -9,4 +10,12 @@ export const Item = ({ friend }) => {
       <StyledP isOnline={isOnline}>{name}</StyledP>
     </StyledItem>
   );
+};
+
+Item.propTypes = {
+  friend: PropTypes.shape({
+    avatar: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    isOnline: PropTypes.bool.isRequired,
+  }).isRequired,
 };

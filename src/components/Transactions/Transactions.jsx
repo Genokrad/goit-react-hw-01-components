@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { TableRow } from './Transaction/Transaction';
 import { StyledTable, StyledTableHead } from './Transaction.styled';
 
@@ -21,4 +22,8 @@ export const TransactionHistory = ({ transactions }) => {
       </StyledTable>
     </section>
   );
+};
+
+TransactionHistory.propTypes = {
+  transactions: PropTypes.arrayOf(PropTypes.shape({}).isRequired).isRequired,
 };

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Item } from './Item/Item';
 import { StyledList } from './Friends.styled';
 
@@ -9,4 +10,8 @@ export const Friends = ({ friends }) => {
       })}
     </StyledList>
   );
+};
+
+Friends.propTypes = {
+  friends: PropTypes.arrayOf(PropTypes.shape({}).isRequired).isRequired,
 };
